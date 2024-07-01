@@ -8,5 +8,5 @@
 # Functionality
 - Register, login, logout using tokens
 - Create posts
-- Get, Update, delete the tasks
+- Get, update, delete posts
 - Create, update, delete comments
