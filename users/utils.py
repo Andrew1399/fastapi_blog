@@ -9,12 +9,13 @@ import jwt
 from users.schemas import TokenData
 from users.models import User
 from database import get_db
+from .env import JWT_SECRET_KEY, JWT_REFRESH_SECRET_KEY
 
 ACCESS_TOKEN_EXPIRE_MINUTES = 30
 REFRESH_TOKEN_EXPIRE_MINUTES = 60 * 24 * 7
 ALGORITHM = 'HS256'
-JWT_SECRET_KEY = 'narscbjim@$@&^@&%^&RFghgjahsteg'
-JWT_REFRESH_SECRET_KEY = '22ugfdfgh@#$%^@&jkl45678972'
+JWT_SECRET_KEY = JWT_SECRET_KEY
+JWT_REFRESH_SECRET_KEY = JWT_REFRESH_SECRET_KEY
 
 password_context = CryptContext(schemes=['bcrypt'], deprecated=['auto'])
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl='/login')
