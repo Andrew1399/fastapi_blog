@@ -42,9 +42,8 @@ class Comment(Base):
 class Category(Base):
     __tablename__ = 'categories'
     id = Column(Integer, primary_key=True, nullable=False)
-    title = Column(String, nullable=False)
+    title = Column(String, nullable=False, unique=True)
     description = Column(String, nullable=True)
-    slug = Column(String, nullable=False, unique=True, index=True)
     created = Column(DateTime, default=datetime.datetime.now)
     post = relationship('Post', back_populates='categories')
     def __str__(self):

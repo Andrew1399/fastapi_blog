@@ -1,6 +1,8 @@
 import datetime
+from typing import Optional
 from pydantic import BaseModel
 from users.schemas import UserSchema
+
 
 class PostSchema(BaseModel):
     id: int
@@ -38,3 +40,6 @@ class CommentCreateUpdate(BaseModel):
     post_id: int
     content: str
 
+class CategoryCreateUpdate(BaseModel):
+    title: str
+    description: Optional[str] = None
