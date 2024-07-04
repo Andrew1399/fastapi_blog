@@ -2,4 +2,4 @@
 posts.db
 .env.py
 .venv
-
+__pycache__/
