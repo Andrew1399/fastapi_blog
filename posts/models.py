@@ -12,6 +12,7 @@ class Post(Base):
     content = Column(String, nullable=False)
     published = Column(Boolean, default=True)
     read_time = Column(Integer, default=0)
+    created_date = Column(DateTime, default=datetime.datetime.now)
     owner_id = Column(Integer, ForeignKey('users.id', ondelete='CASCADE'), nullable=False)
     owner = relationship('User')
     comment = relationship('Comment')
